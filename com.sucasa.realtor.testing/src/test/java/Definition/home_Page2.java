@@ -18,6 +18,9 @@ WebDriver driver ;
 	
 	@Given("^Browser is open$")
 	public void Browser_is_open() throws Throwable {
+
+		//this is to open the browser
+		//updated by tina
 		System.setProperty("webdriver.chrome.driver", "D:\\Sample_Test_Scripts\\Wiki_Scripts\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
 		
