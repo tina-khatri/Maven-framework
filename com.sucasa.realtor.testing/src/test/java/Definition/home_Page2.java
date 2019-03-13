@@ -23,20 +23,18 @@ WebDriver driver ;
 		//updated by tina
 		System.setProperty("webdriver.chrome.driver", "D:\\Sample_Test_Scripts\\Wiki_Scripts\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
-		
-	    
 	}
 
 	@When("^I enter the sucasa url$")
 	public void I_enter_the_sucasa_url() throws Throwable {
 		driver.get("http://sucasa.realtor.com");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-	    
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);	    
 	}
 
 	@Then("^I should navigate to the home page$")
 	public void I_should_navigate_to_the_home_page() throws Throwable {
+		
 		String header = driver.findElement(By.xpath("//div[@class='srch_cont1 page_heading']//span")).getText();
 		System.out.println(header);
 		if(header.contains("Encontrar un"))
